@@ -354,7 +354,7 @@ filename = strcat('dim_img','.nii');
 outfname = fullfile(supp_path{1}, filename);
 filehdr.fname = outfname;
 filehdr.descrip = 'local dimension map';
-dt=[16 0];
+dt=[spm_type('float32'),spm_platform('bigend')];
 Ni_dim = hmri_create_nifti(outfname, filehdr, dt, filehdr.descrip);
 Ni_dim.dat(:,:,:)=dim_img;
 
@@ -367,7 +367,7 @@ filename = strcat('err_img','.nii');
 outfname = fullfile(supp_path{1}, filename);
 filehdr.fname = outfname;
 filehdr.descrip = 'residual maps';
-dt=[16 0];
+dt=[spm_type('float32'),spm_platform('bigend')];
 Ni_err = hmri_create_nifti(outfname, filehdr, dt, filehdr.descrip);
 Ni_err.dat(:,:,:)=err_img;
 
