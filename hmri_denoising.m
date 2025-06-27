@@ -584,7 +584,7 @@ filename = strcat('map_noise_var','.nii');
 outfname = fullfile(supp_path{1}, filename);
 filehdr.fname = outfname;
 filehdr.descrip = 'map of estimated noise variance';
-dt=[16 0];
+dt=[spm_type('float32'),spm_platform('bigend')];
 Ni_dim = hmri_create_nifti(outfname, filehdr, dt, filehdr.descrip);
 Ni_dim.dat(:,:,:)=map_noise_var;
 
@@ -595,7 +595,7 @@ filename = strcat('num_pc','.nii');
 outfname = fullfile(supp_path{1}, filename);
 filehdr.fname = outfname;
 filehdr.descrip = 'number of detected signal principal components';
-dt=[16 0];
+dt=[spm_type('float32'),spm_platform('bigend')];
 Ni_dim = hmri_create_nifti(outfname, filehdr, dt, filehdr.descrip);
 Ni_dim.dat(:,:,:)=num_pc;
 
