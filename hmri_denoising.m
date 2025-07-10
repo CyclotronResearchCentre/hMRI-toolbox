@@ -448,6 +448,14 @@ ngb_size = mppcadenoiseparams.ngbsize;
 mask = mppcadenoiseparams.mask;
 if isempty(mask{1})
     mask = [];
+else
+    mask_str = spm_vol(mask);
+    mask_vols = spm_read_vols(mask_str{1});
+    dims= size(mask_vols);
+    premask = true([dims 1]);
+    premask(:,:,:,1)= mask_vols;
+    premask = logical(premask);
+    mask = premask;
 end
 window = [ngb_size ngb_size ngb_size];
 output_path = cellstr(mppcadenoiseparams.output_path);
