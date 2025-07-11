@@ -418,7 +418,7 @@ if ~isempty(phase_list{1})
 % feeds them to mppca-denoising to get get output mag, phase images
 
 % init image list for further processing
-imglist = zeros(imsize(1), imsize(2), imsize(3), imlen);;
+imglist = zeros(imsize(1), imsize(2), imsize(3), imlen);
 
     for i=1:length(image_list)
         mag_imgstr = spm_vol(image_list{i});
