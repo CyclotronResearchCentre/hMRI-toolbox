@@ -131,7 +131,7 @@ mp_mask         = cfg_files;
 mp_mask.tag     = 'mask';
 mp_mask.name    = 'Mask';
 mp_mask.val     = {['']};
-mp_mask.help    = {['As default, no masking is used: select the mask as a nifti file for masked processing.' ...
+mp_mask.help    = {['As default, no masking is used: select the mask as a nifti file for masked processing. ' ...
     'If the mask contains NaN values, these will be converted to zero during processing.']};
 mp_mask.filter  = 'image';
 mp_mask.ufilter = '.*';
