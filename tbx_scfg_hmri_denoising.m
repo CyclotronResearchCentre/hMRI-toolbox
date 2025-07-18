@@ -158,7 +158,7 @@ mp_ngbsize.help    = {['Specify the neghborhood size']};
 denoisinginput_mppca      = cfg_branch;
 denoisinginput_mppca.tag  = 'mppca_denoise';
 denoisinginput_mppca.name = 'MP-PCA denoising';
-denoisinginput_mppca.help = {'Input images for Lcpca-denoising'
+denoisinginput_mppca.help = {'Input images for MP-PCA denoising'
     ['Regarding processing parameters, you can either stick with metadata and standard ' ...
     'defaults parameters (recommended) or select your own [hmri_denoisinglocal_defaults_*.m] customised defaults file ' ...
     '(fallback for situations where no metadata are available).']};
@@ -199,7 +199,7 @@ ngbsize.help    = {'Specify the neghborhood size', ['This parameter' ...
 denoisinginput_lcpca      = cfg_branch;
 denoisinginput_lcpca.tag  = 'lcpca_denoise';
 denoisinginput_lcpca.name = 'LCPCA denoising';
-denoisinginput_lcpca.help = {'Input Magnitude/Phase images for Lcpca-denoising'
+denoisinginput_lcpca.help = {'Input Magnitude/Phase images for LC-PCA denoising'
     ['Regarding processing parameters, you can either stick with metadata and standard ' ...
     'defaults parameters (recommended) or select your own hmri_denoising_local_defaults_*.m customised defaults file.']};
 denoisinginput_lcpca.val  = {DNparameters std ngbsize};
