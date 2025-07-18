@@ -148,7 +148,9 @@ mp_ngbsize.name    = 'Neighborhood size';
 mp_ngbsize.val     = {[4]};
 mp_ngbsize.strtype = 'e';
 mp_ngbsize.num     = [1 1];
-mp_ngbsize.help    = {['Specify the neghborhood size']};
+mp_ngbsize.help    = {['Specify the neghborhood size']...
+    ['As examples, we used 4 for hMRI toolbox demodata, in Veraart et al.,' ...
+    ' NeuroImage (2016) 142, p 394-406 also 5 and 7 are used for different cases.']};
 
 
 
