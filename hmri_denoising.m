@@ -467,6 +467,7 @@ try
     % apply mppca denoising take out and set variables
 [dn_image, map_noise_var, num_pc] = mppca_denoise(fulldatamat, window, mask);
 catch ME
+    % write the error description to hmrilog and rethrow to matlab
     err_str=['There was an internal error in the MPPCA code: ' ME.message];
     hmri_log(err_str, mppcaflags_nopopup);
     rethrow(ME)
