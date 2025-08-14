@@ -461,9 +461,18 @@ window = [ngb_size ngb_size ngb_size];
 output_path = cellstr(mppcadenoiseparams.output_path);
 supp_path = cellstr(mppcadenoiseparams.supp_path);
 
-
-% apply mppca denoising take out and set variables
+% Execute MPPCA 
+hmri_log(sprintf('Executing MPPCA denoising \n'), mppcaflags_nopopup);
+try
+    % apply mppca denoising take out and set variables
 [dn_image, map_noise_var, num_pc] = mppca_denoise(fulldatamat, window, mask);
+catch ME
+    err_str=['There was an internal error in the MPPCA code: ' ME.message];
+    hmri_log(err_str, mppcaflags_nopopup);
+    rethrow(ME)
+end
+hmri_log('MPPCA denoising executed successfully', mppcaflags_nopopup);
+
 % recalculate magnitude and phase images in case of phase input
 if ~isempty(phase_list{1})
     magimg = abs(dn_image);
