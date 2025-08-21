@@ -147,7 +147,15 @@ end
 U = U(:,order);
 csum = cumsum(lambda,'reverse');
 p = (0:length(lambda)-1)';
-p = -1 + find((lambda-lambda(end)).*(M-p).*(N-p) < 4*csum*sqrt(M*N),1);
+
+% handle the case find returns []
+p_init=find((lambda-lambda(end)).*(M-p).*(N-p) < 4*csum*sqrt(M*N),1);
+if isempty(p_init)
+    p=0;
+else
+    p = -1 + p_init;
+end
+
 if p==0
     X = zeros(size(X));
 elseif M<N
