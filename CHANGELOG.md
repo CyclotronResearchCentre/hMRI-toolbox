@@ -18,6 +18,7 @@ Most recent version numbers *should* follow the [Semantic Versioning](https://se
 - add .orig file extension to .gitignore to prevent merge artifacts to be pushed
 - update GUI code to enhance documentation for Proc. Smoothing
 - denoising module (lcpca): set mat_intent fields to input file values instead of spm_create_vol setting of 'aligned'
+- denoising module-second part: MPPCA denoising
 
 
 ### Fixed
